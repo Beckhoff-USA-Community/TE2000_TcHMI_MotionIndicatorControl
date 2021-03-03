@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.5">
+  <POU Name="MAIN" Id="{8ffc6117-ef31-4439-9480-a19a7b072c27}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	
+	Axis: AXIS_REF;
+	Axis_Enable : MC_Power;
+	
+	Axis_ReadRefVelocity 	: MC_ReadParameter; // reads Ref Velocity
+	totalControlOutput 		: LREAL;
+	Jog						: MC_Jog;
+	Velocity 				: LREAL := 2000;
+	Forward : BOOL;
+	Backward : BOOL;
+	
+	ActVel: LREAL;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Axis_Enable(Axis := Axis, Enable := TRUE, Enable_Positive := TRUE, Enable_Negative := TRUE);
+
+
+Axis_ReadRefVelocity(
+	Axis := Axis, 
+	Enable := TRUE, 
+	ParameterNumber := MC_AxisParameter.AxisRefVeloOnRefOutput,
+	ReadMode := E_ReadMode.READMODE_CYCLIC
+);
+
+	// On first cycle RefVelocity reads as 0. Use SEL to NOT divide by 0
+totalControlOutput := SEL(Axis_ReadRefVelocity.Value > 0.0 , 0.0 ,Axis.NcToPlc.ActVelo/Axis_ReadRefVelocity.Value*100);
+
+ActVel := Axis.NcToPlc.ActVelo;
+
+
+Jog(
+	Axis:= Axis, 
+	JogForward:= Forward, 
+	JogBackwards:= Backward, 
+	Mode:= MC_JOGMODE_CONTINOUS, 
+	Position:= , 
+	Velocity:= Velocity, 
+	Acceleration:= 1000, 
+	Deceleration:= 1000, 
+	Jerk:= , 
+	Done=> , 
+	Busy=> , 
+	Active=> , 
+	CommandAborted=> , 
+	Error=> , 
+	ErrorID=> 
+);]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="6" Count="3" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="10" Count="2" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="48" Count="2" />
+      <LineId Id="27" Count="15" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="68" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

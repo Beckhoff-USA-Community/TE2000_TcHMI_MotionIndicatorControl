@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Motion</id>
+    <version>1.0.2</version>
+    <description>Motion Indicator referencing an axis total control output</description>
+    <authors>Beckhoff-USA</authors>
+    <title>MotionIndicator</title>
+    <license type="file">License.txt</license>
+    <owners>ZacharyD</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <releaseNotes>Test package of motion indocator</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>TwinCAT HMI</tags>
+    <dependencies>
+      <group targetFramework="native1.12-tchmi" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="**\*" target="runtimes\native1.12-tchmi\" exclude="**\*.nuspec;**\*.tpl.json;**\*.hmi*proj;**\~*;**\*.tmp;**\tmp*;**\*.user;**\tsconfig.json;**\*.log;**\*.bak;**\obj\**\*;packages.config;packages.xsd;.hmiframework\**\*;.git;.gitignore;.gitattributes" />
+    <file src="Licenses\License.txt" target="" />
+  </files>
+</package>

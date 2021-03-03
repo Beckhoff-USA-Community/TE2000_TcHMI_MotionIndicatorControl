@@ -1,0 +1,233 @@
+﻿{
+  "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
+  "apiVersion": 1,
+  "name": "MotionIndicatorControl",
+  "namespace": "TcHmi.Controls.MotionIndicator",
+  "displayName": "Motion Indicator",
+  "version": {
+    "full": "1.0.0.0",
+    "major": 1,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "visible": true,
+  "themeable": "Standard",
+  "base": "TcHmi.Controls.System.TcHmiControl",
+  "description": "A control used to visualize a rotating axiss",
+  "properties": {
+    "containerControl": false,
+    "geometry": {
+      "width": 150,
+      "height": 150
+    }
+  },
+  "template": "Template.html",
+  "icons": [
+    {
+      "name": "Icons/16x16.png",
+      "width": 16,
+      "height": 16
+    },
+    {
+      "name": "Icons/24x24.png",
+      "width": 24,
+      "height": 24
+    },
+    {
+      "name": "Icons/32x32.png",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "name": "Icons/64x64.png",
+      "width": 64,
+      "height": 64
+    }
+  ],
+  "dependencyFiles": [
+    {
+      "name": "MotionIndicatorControl.js",
+      "type": "JavaScript",
+      "description": "Contains all the main logic."
+    },
+    {
+      "name": "Style.css",
+      "type": "Stylesheet",
+      "description": "Theme independent style"
+    }
+  ],
+  "themes": {
+    "Base": {
+      "resources": [
+        {
+          "name": "Themes/Base/Style.css",
+          "type": "Stylesheet",
+          "description": "Theme dependent style"
+        }
+      ]
+    }
+  },
+  "attributes": [
+    {
+      "name": "data-tchmi-total-output",
+      "displayName": "Total Output",
+      "propertyName": "TotalOutput",
+      "propertySetterName": "setTotalOutput",
+      "propertyGetterName": "getTotalOutput",
+      "visible": true,
+      "type": "tchmi:general#/definitions/LREAL",
+      "category": "Common",
+      "description": "Total output in % of axis reference velocity. Attribute expects negative number when going backwards",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": 40,
+      "defaultValueInternal": 0,
+      "displayPriority": 10
+    },
+    {
+      "name": "data-tchmi-speed-ratio",
+      "displayName": "Speed Ratio",
+      "propertyName": "SpeedRatio",
+      "propertySetterName": "setSpeedRatio",
+      "propertyGetterName": "getSpeedRatio",
+      "visible": true,
+      "type": "tchmi:general#/definitions/LREAL",
+      "category": "Common",
+      "description": "Float point between 0.0 and 0.12 - The ratio at which the servo cap spins in relation to the total output of the reverence velocity",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": 0.02,
+      "defaultValueInternal": 0.02,
+      "displayPriority": 10
+    },
+    {
+      "name": "data-tchmi-total-bars",
+      "displayName": "Total Bars",
+      "propertyName": "TotalBars",
+      "propertySetterName": "setTotalBars",
+      "propertyGetterName": "getTotalBars",
+      "visible": true,
+      "type": "tchmi:general#/definitions/INT",
+      "category": "Common",
+      "description": "Whole number 1-20. Total bars per width of control. One would set each bar width to the width of the control. Two, half the width of the control.",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": 2,
+      "defaultValueInternal": 0,
+      "displayPriority": 11
+    },
+    {
+      "name": "data-tchmi-shine",
+      "displayName": "Shine",
+      "propertyName": "Shine",
+      "propertySetterName": "setShine",
+      "propertyGetterName": "getShine",
+      "visible": true,
+      "type": "tchmi:general#/definitions/BOOL",
+      "category": "Common",
+      "description": "Turns on or off the graphical shine",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": false,
+      "defaultValueInternal": false,
+      "displayPriority": 14
+    },
+    {
+      "name": "data-tchmi-bar-angle",
+      "displayName": "Bar Angle",
+      "propertyName": "BarAngle",
+      "propertySetterName": "setBarAngle",
+      "propertyGetterName": "getBarAngle",
+      "visible": true,
+      "type": "tchmi:general#/definitions/INT",
+      "category": "Common",
+      "description": "Sets the angle to display each bar at",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": 0,
+      "defaultValueInternal": 0,
+      "displayPriority": 14
+    },
+    {
+      "name": "data-tchmi-color1",
+      "displayName": "Color 1",
+      "propertyName": "Color1",
+      "propertySetterName": "setColor1",
+      "propertyGetterName": "getColor1",
+      "visible": true,
+      "type": "tchmi:framework#/definitions/SolidColor",
+      "category": "Common",
+      "description": "Sets Color 1 of the stripe colors",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": {
+        "color": "rgba(255, 255, 255, 1)"
+      },
+      "defaultValueInternal": {
+        "color": "rgba(255, 255, 255, 1)"
+      },
+      "displayPriority": 12
+    },
+    {
+      "name": "data-tchmi-color2",
+      "displayName": "Color 2",
+      "propertyName": "Color2",
+      "propertySetterName": "setColor2",
+      "propertyGetterName": "getColor2",
+      "visible": true,
+      "type": "tchmi:framework#/definitions/SolidColor",
+      "category": "Common",
+      "description": "Sets Color 2 of the stripe colors",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": {
+        "color": "rgba(0, 0, 0, 1)"
+      },
+      "defaultValueInternal": {
+        "color": "rgba(0, 0, 0, 1)"
+      },
+      "displayPriority": 12
+    },
+    {
+      "name": "data-tchmi-shine-orientation",
+      "displayName": "Shine Orientation",
+      "propertyName": "ShineOrientation",
+      "propertySetterName": "setShineOrientation",
+      "propertyGetterName": "getShineOrientation",
+      "visible": true,
+      "type": "tchmi:framework#/definitions/TcHmi.Controls.MotionIndicator.MotionIndicatorControl.ShineOrientation",
+      "category": "Common",
+      "description": "Sets the shine orientation to 'Vertical' or 'Horizontal'",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": true,
+      "defaultValue": "Vertical",
+      "defaultValueInternal": "Vertical",
+      "displayPriority": 15
+    }
+  ],
+  "attributeCategories": [],
+  "functions": [],
+  "events": [],
+  "dataTypes": [
+    {
+      "schema": "Schema/Types.Schema.json"
+    }
+  ]
+}

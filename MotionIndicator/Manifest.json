@@ -1,0 +1,23 @@
+﻿{
+  "$schema": ".hmiframework/Schema/Manifest.Schema.json",
+  "apiVersion": 1,
+  "modules": [
+    {
+      "type": "Package",
+      "nugetId": "Beckhoff.TwinCAT.HMI.Framework"
+    },
+    {
+      "type": "Control",
+      "basePath": "MotionIndicatorControl/",
+      "descriptionFile": "Description.json",
+      "toolboxCategory": "MotionIndicator:200"
+    }
+  ],
+  "provideMetadata": {
+    "toolbox": {
+      "MotionIndicator": {
+        "200": "Motion"
+      }
+    }
+  }
+}

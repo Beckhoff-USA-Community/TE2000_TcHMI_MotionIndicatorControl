@@ -1,0 +1,16 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "TcHmi.Controls.MotionIndicator.MotionIndicatorControl": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "MotionIndicatorControl",
+      "frameworkControlNamespace": "TcHmi.Controls.MotionIndicator"
+    },
+    "TcHmi.Controls.MotionIndicator.MotionIndicatorControl.ShineOrientation": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "type": "string",
+      "enum": [ "Vertical", "Horizontal" ]
+    }
+  }
+}
