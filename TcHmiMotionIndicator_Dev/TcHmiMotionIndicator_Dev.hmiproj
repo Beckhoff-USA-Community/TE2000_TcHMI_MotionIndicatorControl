@@ -26,7 +26,7 @@
     <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13001</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.732.0</HmiInitial>
-    <HmiRecent>1.12.744.2</HmiRecent>
+    <HmiRecent>1.12.744.4</HmiRecent>
     <HmiCompanyName>Beckhoff Automation LLC</HmiCompanyName>
     <HmiCompanyWebsite>https://beckhoffautomation.com/</HmiCompanyWebsite>
     <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>

@@ -5,10 +5,10 @@
   "namespace": "TcHmi.Controls.MotionIndicator",
   "displayName": "Motion Indicator",
   "version": {
-    "full": "1.0.0.0",
+    "full": "1.0.3.0",
     "major": 1,
     "minor": 0,
-    "revision": 0,
+    "revision": 3,
     "build": 0
   },
   "visible": true,

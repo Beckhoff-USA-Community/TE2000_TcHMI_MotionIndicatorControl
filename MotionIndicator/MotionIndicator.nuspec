@@ -2,11 +2,11 @@
 <package>
   <metadata>
     <id>Motion</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <description>Motion Indicator referencing an axis total control output</description>
     <authors>Beckhoff-USA</authors>
     <title>MotionIndicator</title>
-    <license type="file">License.txt</license>
+	<license type="file">License.txt</license>
     <owners>ZacharyD</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <releaseNotes>Test package of motion indocator</releaseNotes>

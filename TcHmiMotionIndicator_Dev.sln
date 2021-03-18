@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31025.194
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FE7A1B72-C5B7-4D7C-BB7D-76384D4DE8E1}") = "TcHmiMotionIndicator_Dev", "TcHmiMotionIndicator_Dev\TcHmiMotionIndicator_Dev.hmiproj", "{DB51D385-B242-4539-A3F4-0FC89BE24913}"
 EndProject
