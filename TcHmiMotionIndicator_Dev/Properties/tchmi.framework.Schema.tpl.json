@@ -70,7 +70,7 @@
         {
           "name": "topLeft",
           "category": "general",
-          "displayName": "topLeft",
+          "displayName": "TopLeft",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -80,7 +80,7 @@
           "name": "topLeftUnit",
           "category": "general",
           "refTo": "topLeft",
-          "displayName": "topLeftUnit",
+          "displayName": "TopLeftUnit",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -89,7 +89,7 @@
         {
           "name": "topRight",
           "category": "general",
-          "displayName": "topRight",
+          "displayName": "TopRight",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -99,7 +99,7 @@
           "name": "topRightUnit",
           "category": "general",
           "refTo": "topRight",
-          "displayName": "topRightUnit",
+          "displayName": "TopRightUnit",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -108,7 +108,7 @@
         {
           "name": "bottomRight",
           "category": "general",
-          "displayName": "bottomRight",
+          "displayName": "BottomRight",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -118,7 +118,7 @@
           "name": "bottomRightUnit",
           "category": "general",
           "refTo": "bottomRight",
-          "displayName": "bottomRightUnit",
+          "displayName": "BottomRightUnit",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -127,7 +127,7 @@
         {
           "name": "bottomLeft",
           "category": "general",
-          "displayName": "bottomLeft",
+          "displayName": "BottomLeft",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -137,7 +137,7 @@
           "name": "bottomLeftUnit",
           "category": "general",
           "refTo": "bottomLeft",
-          "displayName": "bottomLeftUnit",
+          "displayName": "BottomLeftUnit",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -755,7 +755,7 @@
       "type": "object",
       "propertiesMeta": [
         {
-          "name": "Left",
+          "name": "left",
           "category": "general",
           "displayName": "Left",
           "displayPriority": 10,
@@ -764,9 +764,9 @@
           "defaultValueInternal": null
         },
         {
-          "name": "LeftUnit",
+          "name": "leftUnit",
           "category": "general",
-          "refTo": "Left",
+          "refTo": "left",
           "displayName": "LeftUnit",
           "displayPriority": 10,
           "description": "",
@@ -774,7 +774,7 @@
           "defaultValueInternal": "px"
         },
         {
-          "name": "Top",
+          "name": "top",
           "category": "general",
           "displayName": "Top",
           "displayPriority": 10,
@@ -783,9 +783,9 @@
           "defaultValueInternal": null
         },
         {
-          "name": "TopUnit",
+          "name": "topUnit",
           "category": "general",
-          "refTo": "Top",
+          "refTo": "top",
           "displayName": "TopUnit",
           "displayPriority": 10,
           "description": "",
@@ -793,7 +793,7 @@
           "defaultValueInternal": "px"
         },
         {
-          "name": "Right",
+          "name": "right",
           "category": "general",
           "displayName": "Right",
           "displayPriority": 10,
@@ -802,10 +802,10 @@
           "defaultValueInternal": null
         },
         {
-          "name": "RightUnit",
+          "name": "rightUnit",
           "category": "general",
-          "refTo": "topRight",
-          "displayName": "topRightUnit",
+          "refTo": "right",
+          "displayName": "RightUnit",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -814,7 +814,7 @@
         {
           "name": "bottom",
           "category": "general",
-          "displayName": "bottom",
+          "displayName": "Bottom",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -824,7 +824,7 @@
           "name": "bottomUnit",
           "category": "general",
           "refTo": "bottom",
-          "displayName": "bottomUnit",
+          "displayName": "BottomUnit",
           "displayPriority": 10,
           "description": "",
           "defaultValue": null,
@@ -914,6 +914,187 @@
         "Auto"
       ]
     },
+    "ServerEvent": {
+      "anyOf": [
+        {
+          "title": "Message",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "integer",
+              "enum": [
+                0
+              ],
+              "options": [
+                {
+                  "label": "ENUM_0_MESSAGE",
+                  "value": 0
+                }
+              ],
+              "default": 0
+            },
+            "domain": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "timeReceived": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "sessionId": {
+              "type": "string"
+            },
+            "severity": {
+              "$ref": "tchmi:server#/definitions/severity"
+            },
+            "sourceDomain": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "timeRaised": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "params": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "domain",
+            "name",
+            "timeReceived",
+            "severity",
+            "sourceDomain",
+            "text",
+            "timeRaised",
+            "params"
+          ]
+        },
+        {
+          "title": "Alarm",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "integer",
+              "enum": [
+                1
+              ],
+              "options": [
+                {
+                  "label": "ENUM_1_ALARM",
+                  "value": 1
+                }
+              ],
+              "default": 1
+            },
+            "domain": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "timeReceived": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "sessionId": {
+              "type": "string"
+            },
+            "severity": {
+              "$ref": "tchmi:server#/definitions/severity"
+            },
+            "sourceDomain": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "timeRaised": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "params": {
+              "type": "object"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "timeCleared": {
+              "$ref": "tchmi:server#/definitions/nullableDateTime"
+            },
+            "timeConfirmed": {
+              "$ref": "tchmi:server#/definitions/nullableDateTime"
+            },
+            "alarmState": {
+              "$ref": "tchmi:server#/definitions/alarmState"
+            },
+            "confirmationState": {
+              "$ref": "tchmi:server#/definitions/confirmationState"
+            }
+          },
+          "required": [
+            "type",
+            "domain",
+            "name",
+            "timeReceived",
+            "severity",
+            "sourceDomain",
+            "text",
+            "timeRaised",
+            "params",
+            "id",
+            "timeCleared",
+            "timeConfirmed",
+            "alarmState",
+            "confirmationState"
+          ]
+        },
+        {
+          "title": "PayloadEvent",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "integer",
+              "enum": [
+                2
+              ],
+              "options": [
+                {
+                  "label": "ENUM_2_PAYLOAD",
+                  "value": 2
+                }
+              ],
+              "default": 2
+            },
+            "domain": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "timeReceived": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "sessionId": {
+              "type": "string"
+            },
+            "payload": {}
+          },
+          "required": [
+            "type",
+            "domain",
+            "name",
+            "timeReceived"
+          ]
+        }
+      ]
+    },
     "SizeMode": {
       "type": "string",
       "enum": [
@@ -996,7 +1177,7 @@
                 {
                   "name": "transformType",
                   "category": "general",
-                  "displayName": "transformType",
+                  "displayName": "TransformType",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1097,7 +1278,7 @@
                 {
                   "name": "transformType",
                   "category": "general",
-                  "displayName": "transformType",
+                  "displayName": "TransformType",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1106,7 +1287,7 @@
                 {
                   "name": "angle",
                   "category": "general",
-                  "displayName": "angle",
+                  "displayName": "Angle",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1116,7 +1297,7 @@
                   "name": "angleUnit",
                   "category": "general",
                   "refTo": "angle",
-                  "displayName": "angleUnit",
+                  "displayName": "AngleUnit",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1192,7 +1373,7 @@
                 {
                   "name": "transformType",
                   "category": "general",
-                  "displayName": "transformType",
+                  "displayName": "TransformType",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1268,7 +1449,7 @@
                 {
                   "name": "transformType",
                   "category": "general",
-                  "displayName": "transformType",
+                  "displayName": "TransformType",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1369,7 +1550,7 @@
                 {
                   "name": "transformType",
                   "category": "general",
-                  "displayName": "transformType",
+                  "displayName": "TransformType",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1378,7 +1559,7 @@
                 {
                   "name": "distance",
                   "category": "general",
-                  "displayName": "distance",
+                  "displayName": "Distance",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -1388,7 +1569,7 @@
                   "name": "distanceUnit",
                   "category": "general",
                   "refTo": "distance",
-                  "displayName": "distanceUnit",
+                  "displayName": "DistanceUnit",
                   "displayPriority": 10,
                   "description": "",
                   "defaultValue": null,
@@ -2362,13 +2543,13 @@
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiToggleButton"
     },
     "ChartBarGraphColorList": {
-      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphColorList"
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphColorList"
     },
     "ChartBarGraphDataDefinitionList": {
-      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphDataDefinitionList"
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphDataDefinitionList"
     },
     "ChartBarGraphPosition": {
-      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphPosition"
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphPosition"
     },
     "TcHmi.Controls.Beckhoff.TcHmiBarChart": {
       "$schema": "http://json-schema.org/draft-04/schema",
@@ -2423,6 +2604,56 @@
         "Right"
       ],
       "default": "Left"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphDescriptionDefinitionList": {
+      "title": "ChartBarGraphDescriptionDefinitionList",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "engineeringColumns": [
+          "legendName"
+        ],
+        "propertiesMeta": [
+          {
+            "name": "barColor",
+            "displayName": "Bar color",
+            "category": "Colors",
+            "displayPriority": 10,
+            "description": "Color for this bars",
+            "defaultValue": {
+              "color": "#4794da"
+            },
+            "defaultValueInternal": null
+          },
+          {
+            "name": "legendName",
+            "category": "General",
+            "displayName": "Legend name",
+            "displayPriority": 10,
+            "description": "The name that is displayed in the legend.",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          }
+        ],
+        "properties": {
+          "barColor": {
+            "$ref": "tchmi:framework#/definitions/SolidColor"
+          },
+          "legendName": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphArrangement": {
+      "title": "ChartBarGraphArrangement",
+      "type": "string",
+      "enum": [
+        "Overlapped",
+        "Clustered"
+      ],
+      "default": "Overlapped"
     },
     "TcHmiBarChart": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart"
@@ -2704,17 +2935,7 @@
           "type": "number"
         },
         "text": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "boolean"
-            }
-          ]
+          "type": "string"
         },
         "value": {},
         "category": {
@@ -3535,9 +3756,6 @@
     "EventGridMenuBarPosition": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiEventGrid.MenuBarPosition"
     },
-    "ServerEvent": {
-      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiEventGrid.ServerEvent"
-    },
     "TcHmi.Controls.Beckhoff.TcHmiEventGrid": {
       "$schema": "http://json-schema.org/draft-04/schema",
       "type": "object",
@@ -3723,185 +3941,7 @@
       "default": "Top"
     },
     "TcHmi.Controls.Beckhoff.TcHmiEventGrid.ServerEvent": {
-      "anyOf": [
-        {
-          "title": "Message",
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "integer",
-              "enum": [
-                0
-              ],
-              "options": [
-                {
-                  "label": "ENUM_0_MESSAGE",
-                  "value": 0
-                }
-              ],
-              "default": 0
-            },
-            "domain": {
-              "type": "string"
-            },
-            "name": {
-              "type": "string"
-            },
-            "timeReceived": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "sessionId": {
-              "type": "string"
-            },
-            "severity": {
-              "$ref": "tchmi:server#/definitions/severity"
-            },
-            "sourceDomain": {
-              "type": "string"
-            },
-            "text": {
-              "type": "string"
-            },
-            "timeRaised": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "params": {
-              "type": "object"
-            }
-          },
-          "required": [
-            "type",
-            "domain",
-            "name",
-            "timeReceived",
-            "severity",
-            "sourceDomain",
-            "text",
-            "timeRaised",
-            "params"
-          ]
-        },
-        {
-          "title": "Alarm",
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "integer",
-              "enum": [
-                1
-              ],
-              "options": [
-                {
-                  "label": "ENUM_1_ALARM",
-                  "value": 1
-                }
-              ],
-              "default": 1
-            },
-            "domain": {
-              "type": "string"
-            },
-            "name": {
-              "type": "string"
-            },
-            "timeReceived": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "sessionId": {
-              "type": "string"
-            },
-            "severity": {
-              "$ref": "tchmi:server#/definitions/severity"
-            },
-            "sourceDomain": {
-              "type": "string"
-            },
-            "text": {
-              "type": "string"
-            },
-            "timeRaised": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "params": {
-              "type": "object"
-            },
-            "id": {
-              "type": "integer"
-            },
-            "timeCleared": {
-              "$ref": "tchmi:server#/definitions/nullableDateTime"
-            },
-            "timeConfirmed": {
-              "$ref": "tchmi:server#/definitions/nullableDateTime"
-            },
-            "alarmState": {
-              "$ref": "tchmi:server#/definitions/alarmState"
-            },
-            "confirmationState": {
-              "$ref": "tchmi:server#/definitions/confirmationState"
-            }
-          },
-          "required": [
-            "type",
-            "domain",
-            "name",
-            "timeReceived",
-            "severity",
-            "sourceDomain",
-            "text",
-            "timeRaised",
-            "params",
-            "id",
-            "timeCleared",
-            "timeConfirmed",
-            "alarmState",
-            "confirmationState"
-          ]
-        },
-        {
-          "title": "PayloadEvent",
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "integer",
-              "enum": [
-                2
-              ],
-              "options": [
-                {
-                  "label": "ENUM_2_PAYLOAD",
-                  "value": 2
-                }
-              ],
-              "default": 2
-            },
-            "domain": {
-              "type": "string"
-            },
-            "name": {
-              "type": "string"
-            },
-            "timeReceived": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "sessionId": {
-              "type": "string"
-            },
-            "payload": {}
-          },
-          "required": [
-            "type",
-            "domain",
-            "name",
-            "timeReceived"
-          ]
-        }
-      ]
+      "$ref": "tchmi:framework#/definitions/ServerEvent"
     },
     "TcHmi.Controls.Beckhoff.TcHmiEventGrid.IconDefinition": {
       "title": "IconDefinition",
@@ -3954,6 +3994,113 @@
     },
     "TcHmiEventGrid": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiEventGrid"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "TcHmiHorizontalBarChart",
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphColorList": {
+      "title": "ChartBarGraphColorList",
+      "engineeringDefaultDatatype": 0,
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "tchmi:framework#/definitions/SolidColor"
+          }
+        },
+        {
+          "$ref": "tchmi:framework#/definitions/SolidColor"
+        }
+      ]
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphDataDefinitionList": {
+      "title": "ChartBarGraphDataDefinitionList",
+      "engineeringDefaultDatatype": 0,
+      "anyOf": [
+        {
+          "type": "array",
+          "title": "Array<Array<number>>",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "array",
+          "title": "Array<number>",
+          "items": {
+            "type": "number"
+          }
+        }
+      ]
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphPosition": {
+      "title": "ChartBarGraphPosition",
+      "type": "string",
+      "enum": [
+        "Left",
+        "Right"
+      ],
+      "default": "Left"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphArrangement": {
+      "title": "ChartBarGraphArrangement",
+      "type": "string",
+      "enum": [
+        "Overlapped",
+        "Clustered"
+      ],
+      "default": "Overlapped"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart.ChartBarGraphDescriptionDefinitionList": {
+      "title": "ChartBarGraphDescriptionDefinitionList",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "engineeringColumns": [
+          "legendName"
+        ],
+        "propertiesMeta": [
+          {
+            "name": "barColor",
+            "displayName": "Bar color",
+            "category": "Colors",
+            "displayPriority": 10,
+            "description": "Color for this bars",
+            "defaultValue": {
+              "color": "#4794da"
+            },
+            "defaultValueInternal": null
+          },
+          {
+            "name": "legendName",
+            "category": "General",
+            "displayName": "Legend name",
+            "displayPriority": 10,
+            "description": "The name that is displayed in the legend.",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          }
+        ],
+        "properties": {
+          "barColor": {
+            "$ref": "tchmi:framework#/definitions/SolidColor"
+          },
+          "legendName": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    "TcHmiHorizontalBarChart": {
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiHorizontalBarChart"
     },
     "TcHmi.Controls.Beckhoff.TcHmiIFrame": {
       "$schema": "http://json-schema.org/draft-04/schema",
@@ -4283,6 +4430,15 @@
             "description": "Dot stroke width",
             "defaultValue": 1,
             "defaultValueInternal": 1
+          },
+          {
+            "name": "legendName",
+            "category": "General",
+            "displayName": "Legend name",
+            "displayPriority": 10,
+            "description": "The name that is displayed in the legend.",
+            "defaultValue": null,
+            "defaultValueInternal": null
           }
         ],
         "properties": {
@@ -4311,6 +4467,9 @@
           "pointDotStrokeWidth": {
             "type": "number",
             "minimum": 0
+          },
+          "legendName": {
+            "type": "string"
           }
         },
         "required": [
@@ -4845,6 +5004,15 @@
             "description": "Dot stroke width",
             "defaultValue": 1,
             "defaultValueInternal": 1
+          },
+          {
+            "name": "legendName",
+            "category": "General",
+            "displayName": "Legend name",
+            "displayPriority": 10,
+            "description": "The name that is displayed in the legend.",
+            "defaultValue": null,
+            "defaultValueInternal": null
           }
         ],
         "properties": {
@@ -4879,6 +5047,9 @@
           },
           "pointDotStrokeColor": {
             "$ref": "tchmi:framework#/definitions/SolidColor"
+          },
+          "legendName": {
+            "type": "string"
           }
         },
         "required": [
