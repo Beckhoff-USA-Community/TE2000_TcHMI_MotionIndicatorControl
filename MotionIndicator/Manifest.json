@@ -1,6 +1,4 @@
 ﻿{
-  "$schema": ".hmiframework/Schema/Manifest.Schema.json",
-  "apiVersion": 1,
   "modules": [
     {
       "type": "Package",
@@ -19,5 +17,7 @@
         "200": "Motion"
       }
     }
-  }
+  },
+  "$schema": ".hmiframework/Schema/Manifest.Schema.json",
+  "apiVersion": 1
 }

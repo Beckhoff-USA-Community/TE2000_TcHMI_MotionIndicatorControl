@@ -13,7 +13,9 @@
     <tags>TwinCAT HMI</tags>
     <license type="file">License.txt</license>
     <dependencies>
-      <group targetFramework="native1.12-tchmi" />
+      <group targetFramework="native1.12-tchmi">
+        <dependency id="Beckhoff.TwinCAT.HMI.Framework" version="12.750.1" />
+      </group>
     </dependencies>
   </metadata>
   <files>
