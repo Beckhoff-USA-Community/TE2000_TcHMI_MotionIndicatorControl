@@ -23,7 +23,7 @@
     <EnableTypeScript>true</EnableTypeScript>
     <AzureFunctionsVersion>v2</AzureFunctionsVersion>
     <Name>TcHmiMotionIndicator_Dev</Name>
-    <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10105</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13001</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.732.0</HmiInitial>
     <HmiRecent>1.12.750.1</HmiRecent>
@@ -210,10 +210,6 @@
     <Content Include="packages.xsd">
       <SubType>Content</SubType>
       <Visible>false</Visible>
-    </Content>
-    <Content Include="Properties\tchmiconfig.tpl.json">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
     </Content>
     <Content Include="Properties\tchmiconfig.json">
       <SubType>Content</SubType>

@@ -69,6 +69,9 @@ module TcHmi {
                     this.__$Canvas = this.__elementTemplateRoot.find('canvas');
                     this.__elCanvas = <HTMLCanvasElement>this.__$Canvas[0];
 
+                    // default internal value - runs before init and setters
+                    this.__shineOrientation = "Vertical";
+
                     // Call __previnit of base class
                     super.__previnit();
                 }
@@ -79,7 +82,7 @@ module TcHmi {
                 public __init() {
                     super.__init();
 
-                    
+
 
                 }
 
@@ -120,7 +123,7 @@ module TcHmi {
                     // Setup animation frame ID for later use
                     this.__animRedrawId = undefined;
 
-                    this.__shineOrientation = "Vertical";
+                   
                     this.callRender = this.render();
 
                     

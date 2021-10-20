@@ -47,6 +47,8 @@ var TcHmi;
                     }
                     this.__$Canvas = this.__elementTemplateRoot.find('canvas');
                     this.__elCanvas = this.__$Canvas[0];
+                    // default internal value - runs before init and setters
+                    this.__shineOrientation = "Vertical";
                     // Call __previnit of base class
                     super.__previnit();
                 }
@@ -82,7 +84,6 @@ var TcHmi;
                     this.__barsWidth = this.__canvasWidth / this.__bars;
                     // Setup animation frame ID for later use
                     this.__animRedrawId = undefined;
-                    this.__shineOrientation = "Vertical";
                     this.callRender = this.render();
                     // Render one time after setting up variables
                     this.callRender();
