@@ -24,6 +24,7 @@
     "tcHmiUseTLS": false,
     "useClientCertificate": false,
     "launchBrowserAfterPublish": true,
+    "createVirtualDirectoriesOnTargetSystem": true,
     "tcHmiServerUserName": "__SystemAdministrator",
     "tcHmiDestinationUrl": "http://localhost:1010",
     "publishConfiguration": "remote",

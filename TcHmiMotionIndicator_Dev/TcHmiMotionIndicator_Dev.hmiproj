@@ -26,7 +26,7 @@
     <HmiCommunicationRouterPort>10104</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13001</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.732.0</HmiInitial>
-    <HmiRecent>1.12.746.3</HmiRecent>
+    <HmiRecent>1.12.750.1</HmiRecent>
     <HmiCompanyName>Beckhoff Automation LLC</HmiCompanyName>
     <HmiCompanyWebsite>https://beckhoffautomation.com/</HmiCompanyWebsite>
     <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>
@@ -134,12 +134,17 @@
     <Folder Include="Server\TcHmiUserManagement\" />
     <Folder Include="Themes" />
     <Folder Include="Themes\Base\" />
-    <Folder Include="Server" />
+    <Folder Include="Server">
+      <WorkingDirectory>TcHmiMotionIndicator_Dev</WorkingDirectory>
+    </Folder>
     <Folder Include="Properties" />
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
     </Content>
     <Content Include="packages.config">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Properties\tchmiconfig.json">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Server\ADS\ADS.Config.default.json">
@@ -208,15 +213,6 @@
     <Content Include="packages.xsd">
       <SubType>Content</SubType>
       <Visible>false</Visible>
-    </Content>
-    <Content Include="Properties\tchmiconfig.tpl.json">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Properties\tchmiconfig.json">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-      <DependentUpon>Properties\tchmiconfig.tpl.json</DependentUpon>
     </Content>
     <Content Include="Properties\tchmi.framework.Schema.tpl.json">
       <SubType>Content</SubType>
